@@ -30,7 +30,10 @@ const ProgrammableActionsExample = () => {
             <button className="btn btn-primary" onClick={handleClick}>
                 Кнопка Фокус input
             </button>
-            <button className="btn btn-secondary" onClick={handleClickWidth}>
+            <button
+                className="btn btn-secondary ms-md-2"
+                onClick={handleClickWidth}
+            >
                 Исменить ширину обьекта
             </button>
         </CardWrapper>
