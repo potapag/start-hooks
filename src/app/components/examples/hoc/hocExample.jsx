@@ -8,9 +8,9 @@ import withLogin from "./withLogin";
 import withPropsStyles from "./withPropsStyles";
 
 const HOCExample = () => {
-    const ComponentWithLogin = withLogin(Component);
+    const ComponentWithAuth = withLogin(Component);
     const ComponentWithPropsStyles = withPropsStyles(Component);
-
+    const NewComponent = withPropsStyles(ComponentWithAuth);
     return (
         <>
             <CardWrapper>
@@ -21,7 +21,7 @@ const HOCExample = () => {
             <CardWrapper>
                 <SmallTitle>2. Функциональный HOC</SmallTitle>
                 <Divider />
-                <ComponentWithLogin />
+                <ComponentWithAuth />
             </CardWrapper>
             <CardWrapper>
                 <SmallTitle>3. HOC With Styles and Props</SmallTitle>
@@ -29,6 +29,7 @@ const HOCExample = () => {
             </CardWrapper>
             <CardWrapper>
                 <SmallTitle>4. Composed HOC</SmallTitle>
+                <NewComponent />
             </CardWrapper>
         </>
     );
