@@ -5,7 +5,7 @@ import SmallTitle from "../../common/typografy/smallTitle";
 function factorial(n) {
     return n ? n * factorial(n - 1) : 1;
 }
-function runFactotial(n) {
+function runFactorial(n) {
     console.log("run Factorial");
     return factorial(n);
 }
@@ -26,7 +26,7 @@ const ComplexCalculateExample = () => {
     }, [buttonColor]);
     // const fact = factorial(value);
     // const fact = runFactotial(value);
-    const fact = useMemo(() => runFactotial(value), [value]);
+    const fact = useMemo(() => runFactorial(value), [value]);
 
     return (
         <>
