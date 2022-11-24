@@ -15,7 +15,7 @@ const SelectField = ({
     const getInputClasses = () => {
         return "form-select" + (error ? " is-invalid" : "");
     };
-
+    // useEffect(() => console.log("render Select Field"));
     const optionsArray =
         !Array.isArray(options) && typeof options === "object"
             ? Object.keys(options).map((optionName) => ({
@@ -59,4 +59,4 @@ SelectField.propTypes = {
     options: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
 };
 
-export default SelectField;
+export default React.memo(SelectField);

@@ -21,7 +21,7 @@ const EditUserPage = () => {
     };
 
     const handleSubmit = (data) => {
-        console.log(data);
+        // console.log(data);
         const { profession } = data;
         api.users
             .update(userId, {
@@ -29,7 +29,7 @@ const EditUserPage = () => {
                 profession: getProfessionById(profession)
             })
             .then((data) => history.push(`/users/${data._id}`));
-        console.log(data);
+        // console.log(data);
     };
     const transformData = (data) => {
         return data.map((qual) => ({ label: qual.name, value: qual._id }));
