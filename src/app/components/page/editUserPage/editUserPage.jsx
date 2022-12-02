@@ -75,7 +75,7 @@ const EditUserPage = () => {
                             validatorConfig={validatorConfig}
                             defaultData={data}
                         >
-                            <TextField label="Имя" name="name" />
+                            <TextField label="Имя" name="name" autoFocus />
                             <TextField label="Электронная почта" name="email" />
                             <SelectField
                                 label="Выбери свою профессию"
