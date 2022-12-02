@@ -31,13 +31,24 @@ const FormComponent = ({
         const isValid = validate();
         if (!isValid) return;
         onSubmit(data);
-        console.log(data);
+        // console.log(data);
     };
     useEffect(() => {
         if (Object.keys(data).length > 0) {
             validate(data);
         }
     }, [data]);
+    const hendleKeyDown = useCallback((event) => {
+        // console.log(event);
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            const form = event.target.form;
+            // console.log(event.target.form);
+            const indexField = Array.prototype.indexOf.call(form, event.target);
+            // console.log(indexField);
+            form.elements[indexField + 1].focus();
+        }
+    }, []);
 
     const isValid = Object.keys(errors).length === 0;
 
@@ -56,7 +67,8 @@ const FormComponent = ({
                 ...child.prosp,
                 onChange: handleChange,
                 value: data[child.props.name] || "",
-                error: errors[child.props.name]
+                error: errors[child.props.name],
+                onKeyDown: hendleKeyDown
             };
         }
         if (childType === "string") {
